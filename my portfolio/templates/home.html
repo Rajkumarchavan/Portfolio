@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Rajkumar Chavan - Portfolio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+    <header>
+        <nav>
+            <div>
+            
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/projects">Projects</a>
+        <a href="/contact">Contact</a>
+    
+    </div>
+            
+    </nav>
+</header>
+    
+    <div class="content">
+        <div class="welcome-section">
+            <div class="profile-section">
+                <div class="profile-photo-container">
+                        <img src="{{ url_for('static', filename='Portfolio image.png') }}" alt="Profile Photo"  style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+                        <div class="profile-placeholder">SS</div>
+                        <!-- <div class="status-badge">Available</div> -->
+                </div>
+            </div>
+            <h1>Welcome to My Portfolio</h1>
+            <p>Hello! I am <strong>Rajkumar Chavan</strong>, a passionate Backend Developer specializing in Python, Flask, and modern web technologies. I love creating efficient, scalable solutions and turning ideas into reality.</p>
+            <div class="cta-buttons">
+                <a href="/projects" class="cta-button primary">View My Projects</a>
+                <a href="/contact" class="cta-button secondary">Get In Touch</a>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-item">Python</div>
+                <div class="skill-item">Flask</div>
+                <div class="skill-item">JavaScript</div>
+                <div class="skill-item">HTML/CSS</div>
+                <div class="skill-item">Backend Dev</div>
+                <div class="skill-item">Problem Solving</div>
+            </div>
+        </div>
+    </div>
+    <div class="scroll-progress" id="scrollProgress"></div>
+</body>
+</html>
