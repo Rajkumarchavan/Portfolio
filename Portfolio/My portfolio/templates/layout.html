@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}} Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <h1>Rajkumar Chavan Portfolio</h1>
+            </div>
+            
+            <nav>
+                <div class="menu-toggle" onclick="toggleMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                
+                <ul class="nav-menu" id="navMenu">
+                    <li class="nav-item">
+                        <a href="{{url_for('home')}}" class="active">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{url_for('about')}}" class="active">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{url_for('projects')}}" class="active">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{url_for('contact')}}" class="active">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <div class="main-content">
+        <section class="hero-section">
+            {% block header_content %}
+            {% endblock %}
+        </section>
+        
+        <div class="container">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </div>
+    
+    <footer>
+        
+    </footer>
+    
+    <script>
+        function toggleMenu() {
+            const navMenu = document.getElementById('navMenu');
+            const menuToggle = document.querySelector('.menu-toggle');
+            
+            navMenu.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        }
+
+        // Handle navigation clicks
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Remove active class from all links
+                document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+                
+                // Add active class to clicked link
+                this.classList.add('active');
+                
+                // Close mobile menu if open
+                document.getElementById('navMenu').classList.remove('active');
+                document.querySelector('.menu-toggle').classList.remove('active');
+                
+                // Smooth scroll to section (you can implement actual sections later)
+                const targetId = this.getAttribute('href').substring(1);
+                console.log('Navigating to:', targetId);
+            });
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(e) {
+            const nav = document.querySelector('nav');
+            const navMenu = document.getElementById('navMenu');
+            const menuToggle = document.querySelector('.menu-toggle');
+            
+            if (!nav.contains(e.target)) {
+                navMenu.classList.remove('active');
+                menuToggle.classList.remove('active');
+            }
+        });
+        <WebView
+        android:id="@+id/webview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+{% block header_content %}
+<h2>My Projects</h2>
+<p>Showcasing my technical expertise through innovative solutions</p>
+{% endblock %}
+
+{% block content %}
+<section class="projects-section">
+  <div class="projects-container">
+    <!-- Featured Project -->
+    <div class="featured-project fade-in">
+      <div class="project-badge">Featured Project</div>
+      <div class="project-content">
+        <div class="project-info">
+          <h3>Restuarant website</h3>
+          <p class="project-description">
+            🍴 A stylish website to display a restaurant’s menu, vibe, and easy reservations—all in one place.
+          </p>
+          <div class="tech-stack">
+            <span class="tech-tag python">Python</span>
+            <span class="tech-tag">Frontend</span>
+            <span class="tech-tag">Flask</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/Rajkumarchavan/Project.git" class="project-link github-link">
+              <span class="link-icon">⚡</span>
+              GitHub
+            </a>
+            <a href="https://restaurantwebsite-2eur.onrender.com/" class="project-link demo-link">
+              <span class="link-icon">🚀</span>
+              Live Demo
+            </a>
+          </div>
+        </div>
+        <div class="project-image">
+        <div class="image-placeholder">
+            <div class="placeholder-icon">🍽️</div>
+            <p></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    <!-- GitHub CTA -->
+    <div class="github-cta fade-in">
+      <div class="cta-content">
+        <h3>🚀 Explore More on GitHub</h3>
+        <p>Check out my complete collection of projects, contributions, and open-source work.</p>
+        <a href="https://github.com/Rajkumarchavan" class="github-btn">
+          <span class="btn-icon">📁</span>
+          View All Repositories
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

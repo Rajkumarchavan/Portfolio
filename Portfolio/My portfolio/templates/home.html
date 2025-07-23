@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+{% block header_content %}
+<h1 class="fade-in">Welcome to My Portfolio</h1>
+{% endblock %}
+{% block content %}
+<section class="home-section">
+  <div class="intro-container fade-in">
+    <div class="profile-pic-wrapper bounce-in">
+      <img src="{{ url_for('static', filename='Portfolio image.png') }}" alt="Rajkumar Chavan - Software Engineer" loading="lazy">
+    </div>
+    <div class="intro-text">
+      <h1 class="fade-in">Hello, I'm <span class="highlight">Rajkumar Chavan</span></h1>
+      <p class="subtitle fade-in"> Software Engineer 
+      </p>
+
+      <div class="description-container">
+        <p class="fade-in">
+          I'm a passionate <strong>Software Engineer</strong> driven by curiosity and precision, crafting powerful backend systems with Flask and SQLAlchemy.
+
+          I have a strong foundation in C, Java, Python, and Data Structures & Algorithms.
+        </p>
+
+
+        <div class="tech-stack fade-in">
+            <div class="tech-item"><span class="tech-icon">⚡</span><span>Flask</span></div>
+            <div class="tech-item"><span class="tech-icon">🐍</span><span>Python</span></div>
+            <div class="tech-item"><span class="tech-icon">☕</span><span>Java</span></div>
+        </div>
+      </div>
+
+      <div class="cta-container fade-in">
+        <a href="{{url_for('projects')}}" class="cta-button glow-button">
+          <span>Explore My Work</span>
+          <span class="cta-icon">🚀</span>
+        </a>
+        <a href="{{url_for('contact')}}" class="cta-button-secondary">
+          <span>Let's Connect</span>
+          <span class="cta-icon">💬</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="floating-elements">
+    <div class="floating-element" style="--delay: 0s; --duration: 6s;"><span class="element-icon">💡</span></div>
+    <div class="floating-element" style="--delay: 2s; --duration: 8s;"><span class="element-icon">⚡</span></div>
+    <div class="floating-element" style="--delay: 4s; --duration: 7s;"><span class="element-icon">🔥</span></div>
+    <div class="floating-element" style="--delay: 1s; --duration: 9s;"><span class="element-icon">🎯</span></div>
+  </div>
+</section>
+{% endblock %}
